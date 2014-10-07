@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="/Users/anbang/AndroidStudioProjects/example1/example1/build/intermediates/exploded-aar/example1/libstreaming/unspecified/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/anbang/AndroidStudioProjects/example1/example1/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/anbang/AndroidStudioProjects/example1/example1/src/debug/assets" />
+    </dataSet>
+
+</merger>

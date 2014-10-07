@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/anbang/AndroidStudioProjects/example1/example1/build/intermediates/pre-dexed/debug/classes-a46bd5b3d6da4866f5e9aab38f9420578e3aef49.jar"
+        jar="/Users/anbang/AndroidStudioProjects/example1/example1/build/intermediates/exploded-aar/example1/libstreaming/unspecified/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4f7c3e88f0649b133da56ee7c483cc9a6b86382f"/>
+
+</pre-dex-items>
