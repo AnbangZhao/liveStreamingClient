@@ -3,6 +3,8 @@ package net.majorkernelpanic.example1;
 import net.majorkernelpanic.streaming.SessionBuilder;
 import net.majorkernelpanic.streaming.gl.SurfaceView;
 import net.majorkernelpanic.streaming.rtsp.RtspServer;
+
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences.Editor;
@@ -39,12 +41,18 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.dimAmount = 1.0f;
+        lp.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+        lp.screenBrightness = 0;
+        getWindow().setAttributes(lp);
+		//getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		setContentView(R.layout.activity_main);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		mSurfaceView = (SurfaceView) findViewById(R.id.surface);
-		
+
+
 		// Sets the port of the RTSP server to 1234
 		Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
 		editor.putString(RtspServer.KEY_PORT, String.valueOf(1234));
@@ -55,7 +63,7 @@ public class MainActivity extends Activity {
 		.setSurfaceView(mSurfaceView)
 		.setPreviewOrientation(90)
 		.setContext(getApplicationContext())
-		.setAudioEncoder(SessionBuilder.AUDIO_NONE)
+		.setAudioEncoder(SessionBuilder.AUDIO_AAC)
 		.setVideoEncoder(SessionBuilder.VIDEO_H264);
 		
 		// Starts the RTSP server
